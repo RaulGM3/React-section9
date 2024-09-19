@@ -19,10 +19,10 @@ export default function NewProject ({onAdd, onCancel}) {
       return;
     }
 
-    onAdd({
-      enteredTitle,
-      enteredDescription,
-      enteredDueDate
+    onAdd ({
+      title: enteredTitle,
+      description: enteredDescription,
+      dueDate: enteredDueDate
     })
   }
 
@@ -39,9 +39,9 @@ export default function NewProject ({onAdd, onCancel}) {
           <li><button className='text-stone-800 hover:text-stone-950' onClick={onCancel}>Cancel</button></li>
           <li><button onClick={handleSave} className="bg-stone-800 text-stone-50 hover:bg-stone-950 px-6 py-2 rounded-md">Save</button></li>
         </menu>
-        <Input ref={title} label="Title" />
+        <Input type="text" ref={title} label="Title" />
         <Input ref={description} label="Description" textarea />
-        <Input ref={dueDate} label="Due Date" />
+        <Input type="date" ref={dueDate} label="Due Date" />
       </div>
     </>
   )
